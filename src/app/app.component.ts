@@ -11,12 +11,16 @@ export class AppComponent {
     lat: number ;
     lng: number ;
     show: boolean = false;
+    constructor() {
+
+    }
+
 
     getExif() {
         let img = document.getElementById('img');
         let result = document.getElementById('result');
-        this.show = true;
-        EXIF.getData(img, function () {
+
+        EXIF.getData(img, ()=> {
 
             this.DMSLat = EXIF.getTag(img, 'GPSLatitude');
             this.lat = this.DMSLat[0] + (((this.DMSLat[1] * 60) + (this.DMSLat[2])) / 3600);
@@ -24,7 +28,7 @@ export class AppComponent {
             console.log(this.lat);
         });
 
-        EXIF.getData(img, function () {
+        EXIF.getData(img, ()=> {
 
             this.DSMLon = EXIF.getTag(img, 'GPSLongitude');
             this.lng = this.DSMLon[0] + (((this.DSMLon[1] * 60) + (this.DSMLon[2])) / 3600);
