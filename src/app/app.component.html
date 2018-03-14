@@ -11,7 +11,7 @@
     </div>
 
     <div>
-        <ng-container *ngIf="show==true">
+        <ng-container *ngIf="lat || lng">
             <agm-map [latitude]="lat" [longitude]="lng">
 
                 <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
@@ -21,4 +21,4 @@
     </div>
 </div>
 
-<span id="result"></span>
+<span id="result" ></span>
