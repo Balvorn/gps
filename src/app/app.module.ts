@@ -1,10 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, ApplicationRef } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { AppComponent } from './app.component';
-import * as exif from 'exif-js'
-import { AgmCoreModule } from '@agm/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
+import {AppComponent} from './app.component';
+// import * as EXIF from 'exif-js';
+import {AgmCoreModule} from '@agm/core';
 
 @NgModule({
     imports: [
@@ -16,7 +16,10 @@ import { AgmCoreModule } from '@agm/core';
         })
     ],
     providers: [],
-    declarations: [ AppComponent ],
-    bootstrap: [ AppComponent ]
+    declarations: [AppComponent],
+    bootstrap: [AppComponent]
 })
-export class AppModule {}
+
+export class AppModule {
+
+}

@@ -9,32 +9,26 @@ import * as EXIF from 'exif-js';
 export class AppComponent {
     title = 'My first AGM project';
     lat: number;
-    lng: number;
-    show: boolean = false;
-
-    constructor() {
-
-    }
-
+    lon: number;
 
     getExif() {
-        let img = document.getElementById('img');
-        let result = document.getElementById('result');
+        const img = document.getElementById('img');
+        const result = document.getElementById('result');
 
         EXIF.getData(img, () => {
 
-            this.DMSLat = EXIF.getTag(img, 'GPSLatitude');
-            this.lat = this.DMSLat[0] + (((this.DMSLat[1] * 60) + (this.DMSLat[2])) / 3600);
+            this.lat = EXIF.getTag(img, 'GPSLatitude');
+            this.lat = this.lat[0] + (((this.lat[1] * 60) + (this.lat[2])) / 3600);
 
-            //console.log(this.lat);
+            console.log(this.lat);
         });
 
         EXIF.getData(img, () => {
 
-            this.DSMLon = EXIF.getTag(img, 'GPSLongitude');
-            this.lng = this.DSMLon[0] + (((this.DSMLon[1] * 60) + (this.DSMLon[2])) / 3600);
+            this.lon = EXIF.getTag(img, 'GPSLongitude');
+            this.lon = this.lon[0] + (((this.lon[1] * 60) + (this.lon[2])) / 3600);
 
-            //console.log(this.lng);
+            console.log(this.lon);
         });
     }
 
