@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import * as EXIF from 'exif-js';
+
 @Component({
     selector: 'app-root',
     templateUrl: 'app.component.html',
@@ -7,27 +8,21 @@ import * as EXIF from 'exif-js';
 })
 export class AppComponent {
     title = 'My first AGM project';
-    lat = this.lat;
-    lng = this.lng;
-    sho:boolean;
-    show(){
-    this.sho = true;
-    console.log(this.sho);
-    }
+
+
     getExif() {
         let img = document.getElementById('img');
-        let result  = document.getElementById('result');
-        EXIF.getData(img, function () {
+        let result = document.getElementById('result');
+        lat = EXIF.getData(img, function () {
 
-            this.DSMLon =  EXIF.getTag(img, 'GPSLongitude');
-            this.DMSLat =  EXIF.getTag(img, 'GPSLatitude');
-           // return console.log( 'La longitude est ' + lon + '</br>' + 'La latitude est' + lat);
-            //result.innerHTML = lon + lat;
-            this.lng = this.DSMLon[0]+(((this.DSMLon[1]*60)+(this.DSMLon[2]))/3600);
-            this.lat = this.DMSLat[0]+(((this.DMSLat[1]*60)+(this.DMSLat[2]))/3600);
-            console.log(this.lng);
-            this.show = true;
-            console.log(this.show);
+            this.DMSLat = EXIF.getTag(img, 'GPSLatitude');
+            this.lat = this.DMSLat[0] + (((this.DMSLat[1] * 60) + (this.DMSLat[2])) / 3600);
+        });
+        lon = EXIF.getData(img, function () {
+
+            this.DSMLon = EXIF.getTag(img, 'GPSLongitude');
+            this.lng = this.DSMLon[0] + (((this.DSMLon[1] * 60) + (this.DSMLon[2])) / 3600);
+
         });
     }
 
