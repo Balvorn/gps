@@ -3,11 +3,14 @@
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
 
-<div>
-  <div (click)="show()">
+
+
+<div class="flex-container">
+  <div>
 <img (click)="getExif()" id="img" src="../assets/img.jpg" width="300px" height="300px">
-</div><div *ngIf="sho == true">
-  <agm-map [latitude]="this.lat" [(longitude)]="this.lng">
+</div>
+  <div>
+  <agm-map [latitude]="lat" [(longitude)]="this.lng">
     <agm-marker [latitude]="this.lat" [longitude]="this.lng"></agm-marker>
   </agm-map>
   </div>
