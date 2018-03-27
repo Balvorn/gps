@@ -5,7 +5,9 @@ import {FormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 // import * as EXIF from 'exif-js';
 import {AgmCoreModule} from '@agm/core';
+
 import { AgmJsMarkerClustererModule } from '@agm/js-marker-clusterer';
+
 
 @NgModule({
     imports: [
