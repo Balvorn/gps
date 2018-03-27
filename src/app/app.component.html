@@ -5,7 +5,7 @@
 
 
 <div class="flex-container">
-<<<<<<< HEAD
+
   <div *ngFor="let image of images, let i = index">
     <img [id]=i (click)="getExif(i)" [src]="image.src" width="300px" height="300px">
   </div>
@@ -20,22 +20,3 @@
     </ng-container>
   </div>
 </div>
-=======
-
-    <div>
-        <img (click)="getExif()" id="img" src="../assets/img.jpg" width="300px" height="300px">
-    </div>
-
-    <div>
-        <ng-container *ngIf="lat || lon">
-            <agm-map [latitude]="lat" [longitude]="lon">
-
-                <agm-marker [latitude]="lat" [longitude]="lon"></agm-marker>
-
-            </agm-map>
-        </ng-container>
-    </div>
-</div>
-
-<span id="result" ></span>
->>>>>>> 884b55eddd3ecf960351aa2450873dbfef706b2d
